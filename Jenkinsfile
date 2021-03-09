@@ -10,11 +10,12 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
+                ls 
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                
             }
         }
     }
