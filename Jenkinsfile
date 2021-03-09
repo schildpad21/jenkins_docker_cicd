@@ -10,7 +10,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                ls 
+                sh "ls -al" 
             }
         }
         stage('Deploy') {
