@@ -5,17 +5,18 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'ls -al'
+
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh "ls -al" 
             }
         }
         stage('Deploy') {
             steps {
-                
+                echo 'deploying'
             }
         }
     }
