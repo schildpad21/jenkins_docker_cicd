@@ -10,8 +10,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing.. 🧪'
-                // Yes needed for key authentication, probably causes the passoword to be wrong if the key is already set
-                sh 'sshpass -p \'testtest\' ssh root@172.30.0.2'
+                // Static ip for mock server is 172.20.0.22     
+                sh 'sshpass -p \'testtest\' ssh root@172.20.0.22'
+                sh 'echo "hoi"'
                 // sh 'sshpass -p ‘testest’ rsync --progress -avz -e ssh root@172.30.0.2:~/rsync_stuff/ ~/rsync_things/'
             }
         }
