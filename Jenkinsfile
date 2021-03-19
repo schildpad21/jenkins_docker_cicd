@@ -10,7 +10,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing.. 🧪'
-                sh 'sshpass -p ‘testest’ rsync --progress -avz -e ssh root@172.30.0.2:~/rsync_stuff/ ~/rsync_things/'
+                sh 'sshpass -p 'testtest' ssh root@172.30.0.2'
+                // sh 'sshpass -p ‘testest’ rsync --progress -avz -e ssh root@172.30.0.2:~/rsync_stuff/ ~/rsync_things/'
             }
         }
         stage('Deploy') {
