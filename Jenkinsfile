@@ -10,16 +10,16 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing.. 🧪'
-                // Static ip for mock server is 172.20.0.22     
-                // sh 'sshpass -p \'testtest\' ssh root@172.20.0.22'
-                // sh 'echo "hoi"'
-                sh 'sshpass -p \'testtest\' rsycnc -azP ~/rsync_things/ root@172.30.0.2:~/rsync_stuff/'
-                // sh 'sshpass -p ‘testest’ rsync --progress -avz -e ssh root@172.30.0.2:~/rsync_stuff/ ~/rsync_things/'
             }
         }
         stage('Deploy') {
             steps {
                 echo 'deploying 🚀'
+                // Static ip for mock server is 172.20.0.22     
+                // sh 'sshpass -p \'testtest\' ssh root@172.20.0.22'
+                // sh 'echo "hoi"'
+                sh 'sshpass -p \"testtest\" rsycnc -azP ~/rsync_things/ root@172.30.0.2:~/rsync_stuff/'
+                // sh 'sshpass -p ‘testest’ rsync --progress -avz -e ssh root@172.30.0.2:~/rsync_stuff/ ~/rsync_things/'
             }
         }
     }
