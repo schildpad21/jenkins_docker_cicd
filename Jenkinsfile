@@ -1,5 +1,8 @@
 pipeline {
-    agent any
+    agent {
+        // Only run on dedicated linux slave
+        label 'slaveci7'
+    }
 
     stages {
         // stage('Build') {
