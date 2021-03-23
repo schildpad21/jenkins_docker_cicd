@@ -18,7 +18,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'deploying'
-                // sh "sshpass -p \"testtest\" rsync ${WORKSPACE}/ --progress -avz root@172.20.0.22:~/rsync_stuff/"
+                sh rsync ${WORKSPACE}/ --progress --dry -avz ~/rsync_stuff/
                 
                 sh "echo ${WORKSPACE}"
                 sh "ls -al"
