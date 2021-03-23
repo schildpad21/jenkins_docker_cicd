@@ -18,7 +18,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'deploying'
-                sh "rsync ${WORKSPACE}/ --progress --dry-run -avz ~/rsync_stuff/"
+                sh "rsync ${WORKSPACE}/ --progress --dry-run -avz ${WORKSPACE}/RSYNC_OUTPUT/"
                 
                 sh "echo ${WORKSPACE}"
                 sh "ls -al"
