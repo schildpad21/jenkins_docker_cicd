@@ -19,9 +19,8 @@ pipeline {
             steps {
                 echo 'deploying'
                 sh "rsync ${WORKSPACE}/ --progress -avz ${WORKSPACE}/RSYNC_OUTPUT/"
-                
-                sh "echo ${WORKSPACE}"
-                sh "ls -al"
+                sh "cd ${WORKSPACE}"
+                sh "ls -R"
             }
         }
     }
