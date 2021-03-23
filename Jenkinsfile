@@ -16,6 +16,9 @@ pipeline {
             steps {
                 echo 'deploying 🚀'
                 // sh "sshpass -p \"testtest\" rsync ${WORKSPACE}/ --progress -avz root@172.20.0.22:~/rsync_stuff/"
+                
+                sh "cd ${WORKSPACE}"
+                sh "ls -al"
             }
         }
     }
