@@ -4,17 +4,17 @@ pipeline {
     stages {
         // stage('Build') {
         //     steps {
-        //         echo 'Building.. 🧱 '
+        //         echo 'Building..'
         //     }
         // }
         // stage('Test') {
         //     steps {
-        //         echo 'Testing.. 🧪'
+        //         echo 'Testing..'
         //     }
         // }
         stage('Deploy') {
             steps {
-                echo 'deploying 🚀'
+                echo 'deploying'
                 // sh "sshpass -p \"testtest\" rsync ${WORKSPACE}/ --progress -avz root@172.20.0.22:~/rsync_stuff/"
                 
                 sh "echo ${WORKSPACE}"
