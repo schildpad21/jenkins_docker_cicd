@@ -11,8 +11,8 @@ pipeline {
                     credentialsId: 'rsync-deploy-monitoring', 
                     usernameVariable: 'RSYNC_USERNAME', 
                     passwordVariable: 'RSYNC_PASSWORD')]) {
-                                            
-                    sh 'sshpass -p "$RSYNC_PASSWORD" rsync -vin "mock_data.txt" "$RSYNC_USERNAME"@' + params.Target_Hostname + ':rsync_test_mauro/'
+
+                    sh 'sshpass -p "$RSYNC_PASSWORD" rsync -vain "mock_data.txt" "$RSYNC_USERNAME"@' + params.Target_Hostname + ':rsync_test_mauro/'
                 }   
             }
         }
