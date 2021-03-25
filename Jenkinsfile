@@ -1,26 +1,19 @@
 pipeline {
     agent {
-        // Only run on dedicated linux slave
         label 'slaveci7'
     }
 
     stages {
-        // stage('Build') {
-        //     steps {
-        //         echo 'Building..'
-        //     }
-        // }
-        // stage('Test') {
-        //     steps {
-        //         echo 'Testing..'
-        //     }
-        // }
         stage('Deploy') {
             steps {
-                echo 'deploying'
-                sh "rsync ${WORKSPACE}/ --progress -avz ${WORKSPACE}/RSYNC_OUTPUT/"
-                sh "cd ${WORKSPACE}"
-                sh "ls -R"
+                withCredentials([
+                    usernamePassword(
+                    credentialsId: 'rsync-deploy-monitoring', 
+                    usernameVariable: 'RSYNC_USERNAME', 
+                    passwordVariable: 'RSYNC_PASSWORD')]) {
+                                            
+                    sh 'sshpass -p "$RSYNC_PASSWORD" rsync -vin "mock_data.txt" "$RSYNC_USERNAME"@' + params.Target_Hostname + ':rsync_test_mauro/'
+                }   
             }
         }
     }
