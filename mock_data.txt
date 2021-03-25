@@ -1,1 +1,1 @@
-De data hier wordt gersynct naar een remote andere docker container
+Deze data wordt naar de monitoring server overgezet!
