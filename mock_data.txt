@@ -1,1 +1,2 @@
-Deze data wordt naar de monitoring server overgezet!
+Deze data wordt naar de monitoring server overgezet! 
+Dit is nieuwe text, als je dit ziet is het overgezet vanuit github :D
